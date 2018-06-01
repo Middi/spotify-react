@@ -94,13 +94,6 @@ class App extends Component {
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
 
-    // fetch('https://api.spotify.com/v1/me',{
-    //   headers: {'Authorization': 'Bearer ' + accessToken}
-    // })
-    //   .then(res => res.json())
-    //   .then(res => this.setState({user: {name: res.display_name}}))
-  
-
     fetch('https://api.spotify.com/v1/me/playlists',{
         headers: {'Authorization': 'Bearer ' + accessToken}
       })
