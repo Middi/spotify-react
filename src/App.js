@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'reset-css/reset.css';
 import './App.css';
 import queryString from 'query-string';
  
@@ -6,19 +7,6 @@ const defaultStyle = {
   color: 'green',
   textDecoration: 'underline'
 };
-
-// let fakeServerData = {
-//   user: {
-//     name: 'Richard',
-//     playlists: [
-//       {
-//         name: 'Favourites',
-//         songs: [{name: 'beat it', duration: 1234}, {name: 'come on eileen', duration: 1220}, {name: 'pappas got a brand new bag', duration: 889}, {name: 'The quiet things', duration: 1889}]
-//       }
-//     ]
-//   }
-// };
-
 
 class PlaylistCounter extends Component {
   render() {
@@ -137,8 +125,7 @@ class App extends Component {
 
   render() {
     let playlistToRender = 
-      this.state.user && 
-      this.state.playlists 
+      this.state.user && this.state.playlists 
         ? this.state.playlists
           .filter(playlist => {
             let matchesPlaylist = playlist.name.toLowerCase()
